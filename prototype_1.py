@@ -62,7 +62,7 @@ def think_and_stream(placeholder, answer_text, delay_seconds=1.0, display=None, 
             "Thought for {t:.1f} s"
             "</div>"
         ).format(t=display_time)
-    elif mode == "No Cues (custom)":
+    elif mode == "No Cues (custom)" or CFG.DEV_MODE == False:
         thought_header = ""
         time.sleep(delay_seconds)
     else:
