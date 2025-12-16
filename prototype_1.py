@@ -230,12 +230,15 @@ if user_input and not st.session_state.chat_disabled:
 
         # ====== 等待 END_DELAY 秒，再发结束提示 ======
         time.sleep(CFG.END_DELAY)
-        end_text = (
-            f"This is the end of the interaction. "
-            f"Please enter the code {CFG.VERIFY_CODE} in the Qualtrics survey to continue."
-        )
 
-        with st.chat_message("AI_A", avatar=agent_avatar):
-            st.markdown(end_text)
+        st.info(f"The chat ends. Please copy your Chat ID: {CFG.VERIFY_CODE}")
+        # st.code(CFG.VERIFY_CODE)
+        # end_text = (
+        #     f"This is the end of the interaction. "
+        #     f"Please enter the code {CFG.VERIFY_CODE} in the Qualtrics survey to continue."
+        # )
 
-        st.session_state.messages.append({"role": "AI_A", "content": end_text})
+        # with st.chat_message("AI_A", avatar=agent_avatar):
+        #     st.markdown(end_text)
+
+        # st.session_state.messages.append({"role": "AI_A", "content": end_text})
