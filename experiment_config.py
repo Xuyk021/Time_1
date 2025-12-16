@@ -10,7 +10,7 @@ DEV_MODE = False
 REQUIRED_QUESTION = "is raw milk more nutritious than pasteurized milk?"
 
 # 回答结束后再等待的秒数
-END_DELAY = 3
+END_DELAY = 5
 
 # Qualtrics 验证码
 VERIFY_CODE = "697395"
