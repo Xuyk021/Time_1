@@ -67,8 +67,9 @@ def think_and_stream(
             )
 
     elif mode == "No Cues (custom)" or CFG.DEV_MODE is False:
-        thought_header = ""
-        time.sleep(delay_seconds)
+        thought_header = "" 
+        pass
+        # time.sleep(delay_seconds)
     else:
         thought_header = ""
 
@@ -231,6 +232,9 @@ if user_input and not st.session_state.chat_disabled:
 
 # ========== B) rerun 后：生成 AI 答案（thinking + 流式输出）==========
 if st.session_state.pending_answer and not st.session_state.answered:
+    if thinking_enabled != True and thinking_time > 0:
+        time.sleep(thinking_time)
+
     with st.chat_message("AI_A", avatar=agent_avatar):
         msg_placeholder = st.empty()
         final_text = think_and_stream(
